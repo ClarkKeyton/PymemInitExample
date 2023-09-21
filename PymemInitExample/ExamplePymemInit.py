@@ -9,7 +9,11 @@ def Main():
     while True:
         try:
             handle = p.Pymem("HoloCure.exe")
-            print(handle.base_address)
+            os.system("cls")
+            hexadec = hex(handle.base_address)
+            ws.PlaySound(None, ws.SND_PURGE)
+            print(str(hexadec))
+            time.sleep(3)
             break
         except(except_x.ProcessNotFound, AttributeError) as error_founded:
             os.system("cls")
